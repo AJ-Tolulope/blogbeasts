@@ -27,7 +27,7 @@ const BlogPosts = () => {
       router.push("/auth/signup");
     }
 
-    //  eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
 
   // FILTER THROUGH ALL POSTS DATA BY CATEGORY,

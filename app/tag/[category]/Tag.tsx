@@ -44,7 +44,7 @@ const Tag = ({ params }: Params) => {
       router.push("/auth/signup");
     }
 
-    //  eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
 
   function searchUserInput() {

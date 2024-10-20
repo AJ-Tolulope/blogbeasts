@@ -40,7 +40,6 @@ const HomePage = () => {
       router.push("/auth/signup");
     }
 
-    //  eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
