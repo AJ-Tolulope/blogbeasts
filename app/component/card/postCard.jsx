@@ -8,7 +8,7 @@ const PostCard = ({ post }) => {
       <div className="article-img">
         <Link href={`/posts/${post.id}`}>
           <Image
-            src={`/assets/${post.id}.jpeg`}
+            src={`/asset/${post.id}.jpeg`}
             width={1000}
             height={1000}
             alt={`article-${post.id}`}
@@ -33,7 +33,7 @@ const PostCard = ({ post }) => {
         <div className="article-authur">
           <div>
             <Image
-              src={`/assets/${post.id}.jpeg`}
+              src={`/asset/${post.id}.jpeg`}
               width={500}
               height={500}
               alt={post.author}

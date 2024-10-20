@@ -29,7 +29,7 @@ const Login = () => {
         // alert(res.message);
         toast.success(res.message);
 
-        setTimeout(() => {
+        
           localStorage.setItem("ukcjgbSDHaksjdcserdfgvikjlakknacv", res);
 
           //DISPATCH THE ACTION TO UPDATE THE 'isUserLogged' STATE
@@ -40,7 +40,7 @@ const Login = () => {
 
           //REDIRECT TO THE BLOG PAGE
           router("/posts");
-        }, 2000);
+        
       } else {
         // alert(res.message);
         toast.error(res.message);

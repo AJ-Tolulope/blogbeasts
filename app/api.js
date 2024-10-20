@@ -1,3 +1,4 @@
+'use client'
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -11,6 +12,7 @@ import {
   where,
 } from "firebase/firestore";
 import { auth, db } from "./lib/firebaseConfig";
+import { serverTimestamp } from "firebase/firestore"; 
 
 export const RegisterUser = async (userData) => {
   const { email, password, username } = userData;
@@ -29,7 +31,7 @@ export const RegisterUser = async (userData) => {
       uid: user.uid,
       username,
       email,
-      createdAt: new Date().toISOString(),
+      createdAt: serverTimestamp(),
     });
 
     return {
@@ -45,6 +47,8 @@ export const RegisterUser = async (userData) => {
     if (error.code === "auth/email-already-in-use") {
       errorMessage = "This email is already in use.";
     } 
+
+    console.error("Registration Error:", error);
     throw new Error(errorMessage);
   }
 };
@@ -53,12 +57,18 @@ export const LoginUser = async (userData) => {
   const { email, password } = userData;
 
   try {
+    // Query Firestore to find user by email
     const userQuery = query(
       collection(db, "blogbeastsusers"),
       where("email", "==", email)
     );
 
     const userRef = await getDocs(userQuery);
+
+    // Check if any user document exists with that email
+    if (userRef.empty) {
+      throw { message: "No user found with this email", statusCode: 404 };
+    }
 
     const userDataFromDB = userRef.docs[0].data();
 
@@ -69,8 +79,11 @@ export const LoginUser = async (userData) => {
       password
     );
     const user = userCredential.user;
+
+    // Retrieve Firebase Auth token
     const userToken = await user.getIdToken();
 
+    // Return user data and token
     return {
       uid: user.uid,
       email: user.email,
@@ -78,15 +91,23 @@ export const LoginUser = async (userData) => {
       token: userToken,
     };
   } catch (error) {
-    if (error.code === "auth/invalid-credential") {
+    // Handle specific Firebase errors
+    if (error.code === "auth/wrong-password") {
       throw {
-        message: "Incorrect credentials. Please try again.",
+        message: "Incorrect password. Please try again.",
         statusCode: 401,
       };
-    } else {
+    } else if (error.code === "auth/user-not-found") {
       throw {
-        message: "Something went wrong. Please try again later.",
-        statusCode: 500,
+        message: "No user found with this email. Please sign up.",
+        statusCode: 404,
+      };
+    } else {
+      // Handle general errors
+      throw {
+        message:
+          error.message || "Something went wrong. Please try again later.",
+        statusCode: error.statusCode || 500,
       };
     }
   }

@@ -26,16 +26,14 @@ const Signup = () => {
       if (res.message === "User Registered Successfully") {
         toast.success(res.message);
 
-        setTimeout(() => {
-          // Dispatch the action to update the 'isUserLogged' state
-          dispatch(login());
+        // Dispatch the action to update the 'isUserLogged' state
+        dispatch(login());
 
-          // Reset the form after a successful registration
-          action.resetForm();
+        // Reset the form after a successful registration
+        action.resetForm();
 
-          // Redirect user to the login page
-          router.push("/auth/login");
-        }, 500);
+        // Redirect user to the login page
+        router.push("/auth/login");
       }
     } catch (error) {
       // Check if the error is an object with a message

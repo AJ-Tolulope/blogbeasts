@@ -39,7 +39,6 @@ const HomePage = () => {
     if (!isUserLogged) {
       router.push("/auth/signup");
     }
-
   }, []);
 
   return (
@@ -120,9 +119,7 @@ const HomePage = () => {
           <div>
             {postCategory.map((category) => {
               return (
-                <Link
-                  key={`uniqueid-${category}`}
-                  href={`/tag/${category}`}>
+                <Link key={`uniqueid-${category}`} href={`/tag/${category}`}>
                   <span className="btn-c">{category}</span>
                 </Link>
               );
@@ -168,7 +165,7 @@ const HomePage = () => {
                   <Image
                     width={800}
                     height={800}
-                    src={`/assets/${post.id}.jpeg`}
+                    src={`/asset/${post.id}.jpeg`}
                     alt="most read post"
                   />
                   <div className="title-date">
@@ -199,7 +196,7 @@ const HomePage = () => {
                     <Image
                       width={800}
                       height={800}
-                      src={`/assets/${post.id}.jpeg`}
+                      src={`/asset/${post.id}.jpeg`}
                       alt="profile"
                     />
                     <div className="name-time">

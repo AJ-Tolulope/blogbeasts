@@ -293,6 +293,10 @@ section.hero .container .image-content::after {
 }
 section.hero .container .image-content img {
   height: 34vh;
+  width: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 auto;
   border-radius: 20px;
   transform: var(--transition);
   box-shadow: var(--shadow);
@@ -496,6 +500,7 @@ section.last-comment .container .comments .from-user > div img {
   }
   section.hero .container .image-content img {
     height: 310px;
+    width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
   }

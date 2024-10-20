@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
 import { useState, useEffect } from "react";
-import Link from 'next/link';
+import Link from "next/link";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { RootState } from "@/app/redux/store";
@@ -15,7 +15,7 @@ import SendComment from "../../features/comments/SendComment";
 import "./Blog.css";
 
 type Params = {
-  params: { id: string },
+  params: { id: string };
 };
 
 const Blog = ({ params }: Params) => {
@@ -33,13 +33,15 @@ const Blog = ({ params }: Params) => {
 
   const [comments, setComments] = useState(post.attributes.comments);
 
-  const isUserLogged = useSelector((state: RootState) => state.user.isUserLogged);
+  const isUserLogged = useSelector(
+    (state: RootState) => state.user.isUserLogged
+  );
 
   useEffect(() => {
     if (!isUserLogged) {
       router.push("/auth/signup");
     }
-  },[isUserLogged, router]);
+  }, [isUserLogged, router]);
 
   useEffect(() => {
     setComments(post.attributes.comments);
@@ -54,7 +56,7 @@ const Blog = ({ params }: Params) => {
           <div className="main">
             <div className="blog-image">
               <Image
-                src={`/assets/${post.id}.jpeg`}
+                src={`/asset/${post.id}.jpeg`}
                 width={1000}
                 height={1000}
                 alt=""
