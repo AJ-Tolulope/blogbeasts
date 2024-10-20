@@ -1,0 +1,117 @@
+.blog {
+  padding-top: 8rem;
+}
+.blog .blog-content {
+  display: grid;
+  gap: 8rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 8rem;
+}
+.blog .blog-content .main .blog-image {
+  height: 280px;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--margin);
+  overflow: hidden;
+  position: relative;
+}
+.blog .blog-content .main .blog-image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.blog .blog-content .main .blog-image::after, .blog .blog-content .main .blog-image::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 280px;
+  background-color: var(--background-color);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  top: 50%;
+  right: 0;
+  transform: translateX(50%);
+  z-index: 1;
+}
+.blog .blog-content .main .blog-image::before {
+  width: 140px;
+  top: 70%;
+}
+.blog .blog-content .main .post-title {
+  margin-block: var(--margin);
+}
+.blog .blog-content .main .post-details {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: var(--margin);
+}
+.blog .blog-content .main .post-details span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.blog .blog-content .main .post-content {
+  margin-top: calc(2 * var(--margin));
+}
+.blog .blog-content .main .post-content p {
+  line-height: 2;
+}
+.blog .blog-content .side .user-comments {
+  max-height: 55vh;
+  overflow-y: scroll;
+}
+.blog .blog-content .side .user-comments .comment {
+  padding: var(--padding);
+  background-color: var(--background-light);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--margin-s);
+}
+.blog .blog-content .side .user-comments .comment .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--margin-s);
+}
+.blog .blog-content .side .user-comments .comment .flex span {
+  font-size: 11px;
+  text-transform: capitalize;
+}
+.blog .blog-content .side .user-comments .comment p {
+  font-size: 13px;
+}
+.blog .blog-content .side .add-comment {
+  margin-top: 2rem;
+}
+.blog .blog-content .side .add-comment input,
+.blog .blog-content .side .add-comment textarea {
+  width: 100%;
+  background-color: var(--background-light);
+  margin-top: var(--margin);
+  padding: var(--padding);
+  color: var(--text-p-color);
+  border-radius: var(--border-radius);
+}
+.blog .blog-content .side .add-comment span {
+  margin-top: var(--margin);
+}
+.blog .recent-posts .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.blog .recent-posts .grid .article h2 {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 900px) {
+  .blog .container.blog-content {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 3rem;
+  }
+  .blog .recent-posts .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}/*# sourceMappingURL=Blog.css.map */

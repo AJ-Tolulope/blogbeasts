@@ -1,0 +1,16 @@
+h2 {
+  display: inline-block;
+}
+
+.category {
+  padding: 8rem 0 0;
+}
+.category .container div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem;
+}
+.category .container div span {
+  text-transform: capitalize;
+}/*# sourceMappingURL=BlogPosts.css.map */

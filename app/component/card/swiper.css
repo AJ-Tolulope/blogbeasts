@@ -1,0 +1,48 @@
+.swiper-slide {
+  position: relative;
+  height: 300px;
+}
+.swiper-slide img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: var(--border);
+  border-radius: var(--border-radius);
+}
+.swiper-slide .category {
+  position: absolute;
+  bottom: var(--padding);
+  left: var(--padding);
+  background-color: var(--background-light);
+  padding: var(--padding-s);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+.swiper-slide .category h4 {
+  margin: 0 0 var(--margin-s);
+}
+.swiper-slide:hover .category {
+  bottom: calc(2.5 * var(--padding));
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  font-size: 16px;
+  color: var(--primary-color);
+  background-color: var(--background-light);
+  -webkit-backdrop-filter: var(--blur);
+          backdrop-filter: var(--blur);
+  width: 50px;
+  height: 50px;
+  border: var(--border);
+  border-radius: 100%;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: white;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px;
+}/*# sourceMappingURL=swiper.css.map */

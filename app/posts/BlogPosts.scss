@@ -1,0 +1,19 @@
+h2 {
+  display: inline-block;
+}
+
+.category {
+  padding: 8rem 0 0;
+  .container {
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 1rem;
+
+      span {
+        text-transform: capitalize;
+      }
+    }
+  }
+}

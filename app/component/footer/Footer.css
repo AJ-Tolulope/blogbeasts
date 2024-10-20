@@ -1,0 +1,78 @@
+footer {
+  padding: 5rem 0 2rem;
+}
+footer .container {
+  border: var(--border);
+  border-radius: var(--border-radius);
+  background: var(--background-light);
+  padding: var(--padding);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+footer .container li {
+  color: var(--text-p-color);
+  cursor: pointer;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+}
+footer .container li:hover {
+  color: var(--text-h-color);
+}
+footer .container > div {
+  margin-bottom: calc(2 * var(--margin));
+}
+footer .container > div.about .logo {
+  color: var(--text-p-color);
+}
+footer .container > div.about .logo .logo-text {
+  margin-bottom: var(--margin);
+  letter-spacing: 2px;
+}
+footer .container > div.about .logo .logo-text span {
+  color: var(--primary-color);
+  font-size: var(--font-sm);
+}
+footer .container > div.newsletter .input {
+  margin-top: var(--margin);
+}
+footer .container > div.newsletter .input .text-input {
+  border-bottom: var(--border);
+  padding-block: var(--padding-s);
+}
+footer .container > div.newsletter .input .text-input i {
+  color: var(--text-p-color);
+  margin-right: 0.5rem;
+}
+footer .last {
+  text-align: center;
+  border-top: var(--border);
+  padding-top: var(--padding);
+  margin-top: var(--margin);
+  margin-bottom: 0;
+}
+footer .last .social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--margin);
+  margin-top: var(--margin);
+}
+footer .last .social a {
+  color: var(--text-g-color);
+}
+footer .last .social a i {
+  margin-right: 3px;
+}
+
+@media screen and (min-width: 786px) {
+  footer .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 900px) {
+  footer .container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding: var(--padding);
+  }
+}/*# sourceMappingURL=Footer.css.map */

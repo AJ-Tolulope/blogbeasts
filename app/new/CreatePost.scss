@@ -1,0 +1,28 @@
+.create-post {
+  .container {
+    h3 {
+      margin-bottom: var(--margin);
+    }
+    .input-box {
+      margin-block: var(--margin-s);
+
+      input,
+      textarea {
+        width: 100%;
+        border: var(--border);
+        border-radius: var(--border-radius);
+        color: var(--text-p-color);
+        background: transparent;
+        padding: var(--padding);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .create-post {
+    .container {
+      width: 70%;
+    }
+  }
+}

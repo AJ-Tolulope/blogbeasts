@@ -1,0 +1,42 @@
+header {
+  background-color: var(--background-light);
+  border-bottom: var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--padding);
+}
+header .container .logo img {
+  width: 50px;
+  height: 50px;
+}
+header .container .icons {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+header .container .icons i {
+  font-size: var(--font-sm);
+  margin-left: 2rem;
+  cursor: pointer;
+  color: var(--text-h-color);
+}
+header .container .icons .auth {
+  background-color: transparent;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+header .container .icons .auth a,
+header .container .icons .auth span {
+  text-wrap: nowrap;
+  margin: 0;
+  padding: var(--padding-s);
+}/*# sourceMappingURL=Header.css.map */

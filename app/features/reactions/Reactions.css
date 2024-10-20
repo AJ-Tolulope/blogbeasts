@@ -1,0 +1,29 @@
+.reactions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+.reactions span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.reactions span i {
+  font-size: 18px;
+}
+.reactions span i.active {
+  color: #d03131;
+  animation: pop 0.5s ease-out forwards;
+}
+.reactions a {
+  text-decoration: none;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}/*# sourceMappingURL=Reactions.css.map */
