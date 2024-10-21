@@ -33,15 +33,14 @@
 .article .article-details .tags-time span i {
   margin-right: var(--margin-s);
 }
-.article .article-details .article-title {
-  margin-block: var(--margin);
-}
+.article .article-details .article-title,
 .article .article-details .brief {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
   overflow: hidden;
-  margin-bottom: var(--margin);
+  margin-block: var(--margin);
 }
 .article .article-details .article-authur {
   display: flex;

@@ -37,16 +37,14 @@
       }
     }
 
-    .article-title {
-      margin-block: var(--margin);
-    }
-
+    .article-title,
     .brief {
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
       overflow: hidden;
-      margin-bottom: var(--margin);
+      margin-block: var(--margin);
     }
 
     .article-authur {
