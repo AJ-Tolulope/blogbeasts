@@ -49,7 +49,10 @@ export const RegisterUser = async (userData) => {
     } 
 
     console.error("Registration Error:", error);
-    throw new Error(errorMessage);
+    throw {
+        message: errorMessage,
+        statusCode: 404,
+      };
   }
 };
 

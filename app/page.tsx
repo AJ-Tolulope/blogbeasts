@@ -37,7 +37,7 @@ const HomePage = () => {
   useEffect(() => {
     // IF USER IS NOT LOGGED IN, REDIRECT TO THE AUTH PAGE
     if (!isUserLogged) {
-      router.push("/auth/signup");
+      router.push("/auth/login");
     }
   }, []);
 
