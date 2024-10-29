@@ -85,19 +85,19 @@ const Login = () => {
               </div>
             )}
             <div className="input-box">
-              <label htmlFor="username">email</label>
+              <label htmlFor="email">email</label>
               <input
-                id="username"
+                id="email"
                 type="email"
                 placeholder="Enter email"
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className={
-                  errors.username && touched.username ? "input-error" : ""
+                  errors.email && touched.email ? "input-error" : ""
                 }
               />
-              <p>{errors.username && touched.username && errors.username}</p>
+              <p>{errors.email && touched.email && errors.email}</p>
             </div>
 
             <div className="input-box">
