@@ -88,10 +88,13 @@ export const LoginUser = async (userData) => {
 
     // Return user data and token
     return {
-      uid: user.uid,
-      email: user.email,
-      username: userDataFromDB.username,
-      token: userToken,
+      message: "Login succesfully",
+      data: {
+        uid: user.uid,
+        email: user.email,
+        username: userDataFromDB.username,
+        token: userToken,
+      },
     };
   } catch (error) {
     // Handle specific Firebase errors

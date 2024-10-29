@@ -25,29 +25,27 @@ const Login = () => {
       //MAKE THE API REQ TO LOGIN THE USER
       const res = await LoginUser(values);
 
-      if (res.message === "Login Successful") {
+      if (res.message === "Login succesfully") {
         // alert(res.message);
         toast.success(res.message);
 
-        
-          localStorage.setItem("ukcjgbSDHaksjdcserdfgvikjlakknacv", res);
+        localStorage.setItem("ukcjgbSDHaksjdcserdfgvikjlakknacv", res);
 
-          //DISPATCH THE ACTION TO UPDATE THE 'isUserLogged' STATE
-          dispatch(login());
+        //DISPATCH THE ACTION TO UPDATE THE 'isUserLogged' STATE
+        dispatch(login());
 
-          //RESET THE FORM AFTER A SUCCESSFUL LOGIN
-          action.resetForm();
+        //RESET THE FORM AFTER A SUCCESSFUL LOGIN
+        action.resetForm();
 
-          //REDIRECT TO THE BLOG PAGE
-          router("/posts");
-        
+        //REDIRECT TO THE BLOG PAGE
+        router("/posts");
       } else {
         // alert(res.message);
         toast.error(res.message);
       }
     } catch (error) {
       // alert(`Login Error: ${error.response.data.error}`);
-      toast.error(`Login Error: ${error.response.data.error}`);
+      toast.error(`Login Error: ${error.message}`);
     } finally {
       setLoading(false);
     }
@@ -63,7 +61,7 @@ const Login = () => {
     touched,
   } = useFormik({
     initialValues: {
-      username: "",
+      email: "",
       password: "",
     },
     validationSchema: loginSchema,
@@ -87,12 +85,12 @@ const Login = () => {
               </div>
             )}
             <div className="input-box">
-              <label htmlFor="username">username</label>
+              <label htmlFor="username">email</label>
               <input
                 id="username"
-                type="text"
-                placeholder="Enter username"
-                value={values.username}
+                type="email"
+                placeholder="Enter email"
+                value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className={
