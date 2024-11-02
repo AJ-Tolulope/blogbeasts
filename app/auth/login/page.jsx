@@ -25,11 +25,11 @@ const Login = () => {
       //MAKE THE API REQ TO LOGIN THE USER
       const res = await LoginUser(values);
 
-      if (res.message === "Login succesfully") {
+    
         // alert(res.message);
         toast.success(res.message);
 
-        localStorage.setItem("ukcjgbSDHaksjdcserdfgvikjlakknacv", res);
+        localStorage.setItem("ukcjgbSDHaksjdcserdfgvikjlakknacv", res.data);
 
         //DISPATCH THE ACTION TO UPDATE THE 'isUserLogged' STATE
         dispatch(login());
@@ -39,10 +39,7 @@ const Login = () => {
 
         //REDIRECT TO THE BLOG PAGE
         router("/posts");
-      } else {
-        // alert(res.message);
-        toast.error(res.message);
-      }
+     
     } catch (error) {
       // alert(`Login Error: ${error.response.data.error}`);
       toast.error(`Login Error: ${error.message}`);
